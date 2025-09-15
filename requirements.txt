@@ -1,0 +1,9 @@
+# requirements.txt (デプロイ用・最終版)
+streamlit
+fastf1
+pandas
+google-generativeai
+python-dotenv
+matplotlib
+seaborn
+scikit-learn
