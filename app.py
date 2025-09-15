@@ -32,8 +32,8 @@ if not api_key:
 # ----------------------------------------------------------------
 # Streamlit UI
 # ----------------------------------------------------------------
-st.set_page_config(page_title="F1 Pit Optimizer", page_icon="🏎️", layout="wide")
-st.title("F1 Pit Optimizer 🏎️ V2.5")
+st.set_page_config(page_title="F1 Information Hub", page_icon="🏎️", layout="wide")
+st.title("F1 Information Hub 🏎️ ")
 st.write("FastF1データとGemini 2.5 Flash (with Google Search) を統合した、対話型F1レースエンジニアAI")
 
 with st.sidebar:
@@ -94,7 +94,7 @@ if st.session_state.laps_df is not None:
     st.divider()
 
     # --- 2. ドライバーパフォーマンス分析 ---
-    st.header("ステップ2: ドライバーパフォーマンス分析")
+    st.header("ドライバーパフォーマンス分析")
     drivers = sorted(st.session_state.laps_df['Driver'].unique())
     selected_drivers = st.multiselect("分析したいドライバーを選択", options=drivers, default=drivers[:2])
     analysis_button = st.button("分析を実行", type="primary")
@@ -122,7 +122,7 @@ if st.session_state.laps_df is not None:
                         })
             if results:
                 st.session_state.results_df = pd.DataFrame(results)
-                st.success("分析が完了しました！")
+                st.success("分析が完了しました")
             else:
                 st.warning("分析可能なデータが見つかりませんでした。")
 
@@ -147,7 +147,7 @@ if st.session_state.results_df is not None:
     st.divider()
 
 # --- 3. Gemini 2.5 Flash との対話型分析 ---
-st.header("ステップ3: Gemini 2.5 Flash との対話型分析")
+st.header("Gemini 2.5 Flash との対話型分析")
 
 if "chat_history" not in st.session_state or st.session_state.chat_history is None or analysis_button:
     st.session_state.chat_history = []
