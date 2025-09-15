@@ -1,0 +1,15 @@
+# .gitignore
+
+# 仮想環境
+.venv
+
+# 秘密情報
+.env
+
+# キャッシュとデータ
+cache/
+data/
+
+# Pythonキャッシュ
+__pycache__/
+*.pyc
